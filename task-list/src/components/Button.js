@@ -1,9 +1,13 @@
-import React from 'react'
+import React from "react";
 
-export default function Button() {
-    return (
-        <button className="temp">
-            Add Task
-        </button>
-    )
+export default function Button({ color, text, onClick }) {
+  return (
+    <button
+      onClick={onClick}
+      style={{ backgroundColor: color }}
+      className="btn"
+    >
+      {text}
+    </button>
+  );
 }
