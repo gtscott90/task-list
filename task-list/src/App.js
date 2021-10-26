@@ -1,7 +1,7 @@
-import './index.css';
-import Header from "./components/Header"
-import Tasks from "./components/Tasks"
-import { useState } from "react"
+import "./index.css";
+import Header from "./components/Header";
+import Tasks from "./components/Tasks";
+import { useState } from "react";
 
 function App() {
   // calling this peice of state tasks and the function used to updated tasks is setTasks
@@ -29,12 +29,16 @@ function App() {
       time: "10:30 am",
       reminder: true,
     },
-  ])
-  
+  ]);
+
+  // Delete Task
+  const deleteTask = (id) => {
+    setTasks(tasks.filter((task) => task.id !== id));
+  };
   return (
     <div className="container temp">
-        <Header title="Task Tracker" />
-        <Tasks tasks={tasks}/>
+      <Header title="Task Tracker" />
+      <Tasks tasks={tasks} onDelete={deleteTask} />
     </div>
   );
 }
