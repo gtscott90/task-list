@@ -42,7 +42,6 @@ function App() {
         task.id === id ? { ...task, reminder: !task.reminder } : task
       )
     );
-    console.log("Toggled Reminder", id);
   };
   return (
     <div className="container temp">
