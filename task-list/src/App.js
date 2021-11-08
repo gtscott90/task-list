@@ -5,8 +5,8 @@ import AddTask from "./components/AddTask";
 import { useState } from "react";
 
 function App() {
-  const [showAddTask, setShowAddTask] = useState(false)
-  
+  const [showAddTask, setShowAddTask] = useState(false);
+
   // calling this peice of state tasks and the function used to updated tasks is setTasks
   // in the () of useState() goes the default version of the state
   // setting state here at the top level of the app (app.js) so that all things can access it
@@ -33,15 +33,15 @@ function App() {
       reminder: true,
     },
   ]);
- // Add Task
- const addTask = (task) => {
-  // create an id
-  const id = Math.floor(Math.random() * 10000) + 1
-  // create the new task by adding the new id to the info from the form
-  const newTask = { id, ...task }
-  // update the state with the new task
-  setTasks([...tasks, newTask])
- }
+  // Add Task
+  const addTask = (task) => {
+    // create an id
+    const id = Math.floor(Math.random() * 10000) + 1;
+    // create the new task by adding the new id to the info from the form
+    const newTask = { id, ...task };
+    // update the state with the new task
+    setTasks([...tasks, newTask]);
+  };
 
   // Delete Task
   const deleteTask = (id) => {
@@ -57,8 +57,12 @@ function App() {
   };
   return (
     <div className="container temp">
-      <Header title="Task Tracker" onAdd={() => setShowAddTask(!showAddTask)} />
-      {showAddTask && <AddTask onAdd={addTask}/>}
+      <Header
+        title="Task Tracker"
+        onAdd={() => setShowAddTask(!showAddTask)}
+        showAdd={showAddTask}
+      />
+      {showAddTask && <AddTask onAdd={addTask} />}
       {tasks.length > 0 ? (
         <Tasks
           tasks={tasks}
