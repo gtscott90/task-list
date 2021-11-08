@@ -33,7 +33,12 @@ function App() {
   ]);
  // Add Task
  const addTask = (task) => {
-  console.log(task)
+  // create an id
+  const id = Math.floor(Math.random() * 10000) + 1
+  // create the new task by adding the new id to the info from the form
+  const newTask = { id, ...task }
+  // update the state with the new task
+  setTasks([...tasks, newTask])
  }
 
   // Delete Task
