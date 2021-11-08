@@ -5,6 +5,8 @@ import AddTask from "./components/AddTask";
 import { useState } from "react";
 
 function App() {
+  const [showAddTask, setShowAddTask] = useState(false)
+  
   // calling this peice of state tasks and the function used to updated tasks is setTasks
   // in the () of useState() goes the default version of the state
   // setting state here at the top level of the app (app.js) so that all things can access it
@@ -55,8 +57,8 @@ function App() {
   };
   return (
     <div className="container temp">
-      <Header title="Task Tracker" />
-      <AddTask onAdd={addTask}/>
+      <Header title="Task Tracker" onAdd={() => setShowAddTask(!showAddTask)} />
+      {showAddTask && <AddTask onAdd={addTask}/>}
       {tasks.length > 0 ? (
         <Tasks
           tasks={tasks}
