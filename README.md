@@ -44,7 +44,7 @@ This task list can be used to show how React manipulates the UI through the use 
 ## Links
 
 - [Github](https://github.com/gtscott90/task-list-react-frontend)
-- [Deployed App - Coming Soon](#)
+- [Deployed App](https://gtscott90.github.io/task-list-react-frontend/)
 
 ## Technologies
 
